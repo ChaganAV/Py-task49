@@ -28,5 +28,10 @@ while True:
     else:
         dictFio.append(line.split(','))
 file.Close()
+count = 0
 for line in dictFio:
-    print(line[0])
+    count = count + 1
+    if count > 2:
+        print(line[0] + " " + line[1])
+    else:
+        print(line[0])
