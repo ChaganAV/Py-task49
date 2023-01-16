@@ -20,10 +20,13 @@ file = lib.File(fin,'w')
 
 file = lib.File(fin,'r')
 file.Open()
+dictFio = []
 while True:
     line = file.ReadLine()
     if not line:
         break
     else:
-        print(line)
+        dictFio.append(line.split(','))
 file.Close()
+for line in dictFio:
+    print(line[0])
