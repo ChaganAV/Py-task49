@@ -20,4 +20,13 @@ class File:
         return self.data.read()
     def ReadLine(self):
         return self.data.readline()
+class Client:
+    def __init__(self, firstname, secondname, surname):
+        self.Firstname = firstname
+        self.Secondname = secondname
+        self.Surname = surname
+    def AddPhone(self, phone):
+        self.Phone = phone
+
+
     
