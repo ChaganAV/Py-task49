@@ -72,7 +72,7 @@ def FindFirstname(file,name):
     for line in listFio:
         res = list(filter(lambda f: f.strip() == name, line))
         if len(res)>0:
-            lineOut = line
+            lineOut.append(line)
     return lineOut
 # вывод списка команд
 def SelectCommands():

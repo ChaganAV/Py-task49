@@ -18,7 +18,8 @@ def InputClient():
             name = input("Введите фамилию: ")
             listFio = lib.FindFirstname(fin,name)
             if len(listFio)>0:
-                print(*listFio)
+                for line in listFio:
+                    print(*line)
             else:
                 print(f"Нет такой фамилии: {name}")
         elif res == 3:
