@@ -63,7 +63,10 @@ def FindPhone(file,phone):
         res = list(filter(lambda ph: ph.strip() == phone,line))
         if len(res)>0:
             lineOut = line
-    return lineOut
+    if len(lineOut)>0:
+        print(*lineOut)
+    else:
+        print(f"Нет записи с телефоном: {phone}")
 
 def FindFirstname(file,name):
     listFio = FileToList(file)
@@ -73,7 +76,13 @@ def FindFirstname(file,name):
         res = list(filter(lambda f: f.strip() == name, line))
         if len(res)>0:
             lineOut.append(line)
-    return lineOut
+            
+    if len(lineOut)>0:
+        for line in lineOut:
+            print(*line)
+    else:
+        print(f"Нет такой фамилии: {name}")
+
 # вывод списка команд
 def SelectCommands():
     commands = "Список команд:\n\

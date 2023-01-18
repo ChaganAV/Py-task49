@@ -11,24 +11,14 @@ def InputClient():
     lib.SelectCommands()
     while True:
         res = int(input("Введите номер действия: \n> "))
-        if res == 1:
-            
+        if res == 1: 
             lib.dictPrint(fin)
         elif res == 2:
             name = input("Введите фамилию: ")
-            listFio = lib.FindFirstname(fin,name)
-            if len(listFio)>0:
-                for line in listFio:
-                    print(*line)
-            else:
-                print(f"Нет такой фамилии: {name}")
+            lib.FindFirstname(fin,name)
         elif res == 3:
             phone = input("Введите телефон: ")
-            listPhone = lib.FindPhone(fin,phone)
-            if len(listPhone)>0:
-                print(*listPhone)
-            else:
-                print(f"Нет записи с телефоном: {phone}")
+            lib.FindPhone(fin,phone)
         elif res == 4:
             firstname = input("Введите фамилию: ")
             secondname = input("Введите имя: ")
