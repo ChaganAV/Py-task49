@@ -17,8 +17,8 @@ fin = "fileIn.txt"
 # file.AddFioPhone("Петров Иван Иванович","8987456123")
 # file.AddFioPhone("Сидоров Иннокентий Петровчи","8927456789")
 # file.Close()
-client = lib.Client("Козлов", "Кеша", "Иванович")
-client.Phone = "+7945654321"
+client = lib.Client("Васечкин", "Александр", "Петрович")
+client.Phone = "+7945646321"
 file = lib.File(fin,'a')
 file.Open()
 file.Add(client.Firstname,client.Secondname,client.Surname,client.Phone)
@@ -38,7 +38,7 @@ file.Close()
 count = 0
 for line in dictFio:
     count = count + 1
-    if count > 2:
-        print(f"{line[0]}, {line[1]}, {line[2], line[3]}")
+    if count != 2:
+        print(f"{line[0]}, {line[1]}, {line[2]}, {line[3]}")
     else:
         print(line[0])
