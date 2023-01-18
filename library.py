@@ -55,13 +55,27 @@ def dictPrint(file):
         else:
             print(line[0])
 # поиск записи
-def FindPhone(phone):
-    file = File(file,'r')
-    file.Open()
-    dictFio = []
+def FindPhone(file,phone):
+    listFio = FileToList(file)
+    res = ""
+    lineOut = []
+    for line in listFio:
+        res = list(filter(lambda ph: ph.strip() == phone,line))
+        if len(res)>0:
+            lineOut = line
+    return lineOut
 
+def FindFirstname(file,name):
+    listFio = FileToList(file)
+    res = ""
+    lineOut = []
+    for line in listFio:
+        res = list(filter(lambda f: f.strip() == name, line))
+        if len(res)>0:
+            lineOut = line
+    return lineOut
 # вывод списка команд
-def selectCommands():
+def SelectCommands():
     commands = "Список команд:\n\
             1 - Показать все записи\n\
             2 - Найти запись по вхождению частей имени\n\
