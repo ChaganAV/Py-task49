@@ -6,7 +6,7 @@ import library as lib
 
 
 fin = "fileIn.txt" 
-file = lib.File(fin,'w')
+# file = lib.File(fin,'w')
 # file.Open()
 # file.Add("ФИО,       телефон\n")
 # file.Add('-----------------------------------\n')
@@ -17,6 +17,12 @@ file = lib.File(fin,'w')
 # file.AddFioPhone("Петров Иван Иванович","8987456123")
 # file.AddFioPhone("Сидоров Иннокентий Петровчи","8927456789")
 # file.Close()
+client = lib.Client("Козлов", "Кеша", "Иванович")
+client.Phone = "+7945654321"
+file = lib.File(fin,'a')
+file.Open()
+file.Add(client.Firstname,client.Secondname,client.Surname,client.Phone)
+file.Close()
 
 file = lib.File(fin,'r')
 file.Open()
@@ -33,6 +39,6 @@ count = 0
 for line in dictFio:
     count = count + 1
     if count > 2:
-        print(line[0] + " " + line[1])
+        print(f"{line[0]}, {line[1]}, {line[2], line[3]}")
     else:
         print(line[0])
