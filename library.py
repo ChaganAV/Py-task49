@@ -33,5 +33,23 @@ class Client:
     def AddPhone(self, phone):
         self.Phone = phone
 
+def dictPrint(file):
+    file = File(file,'r')
+    file.Open()
+    dictFio = []
+    while True:
+        line = file.ReadLine()
+        if not line:
+            break
+        else:
+            dictFio.append(line.split(','))
+    file.Close()
 
+    count = 0
+    for line in dictFio:
+        count = count + 1
+        if count != 2:
+            print(f"{line[0]}, {line[1]}, {line[2]}, {line[3]}")
+        else:
+            print(line[0])
     
