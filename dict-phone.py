@@ -36,20 +36,3 @@ def InputClient():
 
 InputClient()
         
-
-
-# file = lib.File(fin,'w')
-# file.Open()
-# file.Add("ФИО,       телефон\n")
-# file.Add('-----------------------------------\n')
-# file.Close()
-
-# file = lib.File(fin, 'a')
-# file.Open()
-# file.AddFioPhone("Петров Иван Иванович","8987456123")
-# file.AddFioPhone("Сидоров Иннокентий Петровчи","8927456789")
-# file.Close()
-
-
-
-# lib.dictPrint(fin)
