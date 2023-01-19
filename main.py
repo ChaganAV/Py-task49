@@ -1,3 +1,5 @@
 import view as v
-
-v.InputClient()
+try:
+    v.InputClient()
+except:
+    print("Упс, что-то пошло не так!")
