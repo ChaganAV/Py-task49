@@ -1,38 +1,37 @@
-import library as lib
-# def append(file,mod,name,phone):
-#     data = open(file,mod)
-#     data.writelines(name+", "+phone)
-#     data.close()
-# fin = "filePhones.txt" 
-fin = lib.fin
+import data as d
+import controller as c
+
+fin = d.fin
 
 def InputClient():
     print("==Телефонный справочник==") 
-    lib.SelectCommands()
+    c.SelectCommands()
     while True:
         res = int(input("Введите номер действия: \n> "))
         if res == 1: 
-            lib.dictPrint(fin)
+            c.DictPrint(fin)
         elif res == 2:
             name = input("Введите фамилию: ")
-            lib.FindFirstname(fin,name)
+            c.FindFirstname(fin,name)
         elif res == 3:
             phone = input("Введите телефон: ")
-            lib.FindPhone(fin,phone)
+            c.FindPhone(fin,phone)
         elif res == 4:
             firstname = input("Введите фамилию: ")
             secondname = input("Введите имя: ")
             surname = input("Введите отчество: ")
             phone = input("Введите телефон: ")
-            lib.appendRow(firstname=firstname,secondname=secondname,surname=surname,phone=phone)
+            c.AppendRow(firstname=firstname,secondname=secondname,surname=surname,phone=phone)
         elif res == 5:
-            break
+            phone = input("Для удаления записи, введите телефон: ")
+            res = c.DeleteRow(fin,phone)
+            if res>0:
+                print(f"Найдено {res} записей с телефоном: {phone}. Все удалены!")
+            else:
+                print(f"Запись с телефоном: {phone} не найдена")
         elif res == 6:   
             break
         elif res == 7:
             break
         else:
-            lib.SelectCommands()
-
-InputClient()
-        
+            c.SelectCommands()
